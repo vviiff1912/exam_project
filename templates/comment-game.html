@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+    <form id="create" method="post" action="{% url 'comment game' game_id=game.pk user_id=user.pk %}">
+            <h1>Comment Game</h1>
+
+              {{ form }}
+
+            <input class="btn submit" type="submit" value="Post comment">
+            {% csrf_token %}
+
+    </form>
+
+{% endblock %}

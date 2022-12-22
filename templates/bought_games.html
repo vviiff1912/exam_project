@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if all_games %}
+    <section id="welcome-world">
+        {% for game in all_games %}
+
+            <div class="game">
+                <div class="image-wrap">
+                    <img src="{{ game.game.image_url }}"
+                         alt="UNO">
+                </div>
+                <h3>{{ game.game.title }}</h3>
+                <h1>{{ game.game.category }}</h1>
+            </div>
+
+        {% endfor %}
+    </section>
+
+{% else %}
+    <p class="no-articles">No games yet</p>
+
+{% endif %}
+{% endblock %}
